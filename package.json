@@ -1,0 +1,29 @@
+{
+  "name": "mermaid-sea",
+  "main": "index.html",
+  "description": "mermaid GUI",
+  "keywords": [
+    "mermaid",
+    "data-flow",
+    "markdown",
+    "diagram",
+    "svg"
+  ],
+  "maintainer": [
+    {
+      "name": "Boom Lee",
+      "email": "boom11235.gg@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "http://github.com/jsenjoy/mermaid-sea.git"
+    }
+  ],
+  "version": "0.1.0",
+  "js-flag": "--harmony",
+  "window": {
+    "title": "Mermaid Sea"
+  }
+}
