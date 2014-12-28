@@ -2,30 +2,34 @@
 purecss = 0.5.0
 react = 0.12.2
 
-init: assets
-	@${MAKE} bower
+init: bower npm
+
+watch:
+	@node_modules/.bin/jsx -x jsx -w jsx/ assets/js/
 
 build: init
 
 clean:
-	@rm -rf bower_components build
+	@rm -rf dist
 
 # ==== Private =====
 bower:
+	@mkdir dist
 	@bower install purecss#${purecss} react#${react} mermaid
 	@${MAKE} purecss
 	@cp bower_components/purecss/build/pure-min.css \
-		bower_components/react/react.min.js \
-		bower_components/react/JSXTransformer.js \
+		bower_components/react/react.js \
 		bower_components/mermaid/dist/mermaid.full.min.js \
-		build/dist
+		dist
 	@rm -rf bower_components
 
-assets:
-	@mkdir build build/dist
+npm:
+	@npm install react-tools
 
 purecss:
 	@cd bower_components/purecss; \
 		npm install; \
 		grunt build
+
+
 
